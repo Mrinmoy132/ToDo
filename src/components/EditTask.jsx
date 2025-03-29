@@ -29,7 +29,7 @@ const EditTask = ({ task, hideEditBar }) => {
 
   const onSubmit = async (data) => {
     dispatch(updateTask({ id: task.id, ...data })); // Pass ID along with new data
-    // await delay(1);
+    await delay(1);
     hideEditBar(); // Close the edit task bar after submitting
   };
 
@@ -48,15 +48,15 @@ const EditTask = ({ task, hideEditBar }) => {
             </div>
             <input placeholder='Enter the title of your task' type="text"
               {...register("title",
-                // {
-                //   required: { value: true, message: "title is required" },
-                //   minLength: { value: 5, message: "minimum length of title is 5" },
-                //   maxLength: { value: 30, message: "maximum length of title is 30" }
-                // }
+                {
+                  required: { value: true, message: "title is required" },
+                  minLength: { value: 5, message: "minimum length of title is 5" },
+                  maxLength: { value: 30, message: "maximum length of title is 30" }
+                }
               )}
             />
           </label>
-          {/* {errors.title && <div className='red' style={{ fontSize: 'small' }}>{errors.title.message}</div>} */}
+          {errors.title && <div className='red' style={{ fontSize: 'small' }}>{errors.title.message}</div>}
         </div>
         <div>
           <label className='common_class_label'>
@@ -64,7 +64,7 @@ const EditTask = ({ task, hideEditBar }) => {
               <p className='red'>*</p>
             </div>
             <select {...register("priority", 
-              // { required: { value: true, message: "priority is required" } }
+              { required: { value: true, message: "priority is required" } }
             )} defaultValue=""
               >
               <option value="" disabled>Select Priority</option>
@@ -72,16 +72,16 @@ const EditTask = ({ task, hideEditBar }) => {
               <option value="Medium">Medium</option>
               <option value="High">High</option>
             </select>
-            {/* {errors.priority && <div className='red' style={{ fontSize: 'small' }}>{errors.priority.message}</div>} */}
+            {errors.priority && <div className='red' style={{ fontSize: 'small' }}>{errors.priority.message}</div>}
           </label>
           <label className='common_class_label' htmlFor="" >
             <div style={{ display: 'flex' }}>Deadline
               <p className='red'>*</p>
             </div>
             <input placeholder='Enter date' type="date" {...register("date", 
-              // { required: { value: true, message: "deadline is required" } }
+              { required: { value: true, message: "deadline is required" } }
               )} />
-            {/* {errors.date && <div className='red' style={{ fontSize: 'small' }}>{errors.date.message}</div>} */}
+            {errors.date && <div className='red' style={{ fontSize: 'small' }}>{errors.date.message}</div>}
           </label>
         </div>
         <div>
