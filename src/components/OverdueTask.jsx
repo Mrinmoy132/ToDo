@@ -23,7 +23,7 @@ const OverDueTask = () => {
   return (<>
     {editBar && <div className="overlay"></div>}
     <div className={editBar ? "disabled-container blur" : "blur"}>
-      {overdueTasks.length == 0 && <h2 className='no-task'>No Due Task</h2>}
+      {overdueTasks.length == 0 && <h2 className='no-task'>No Overdue Task</h2>}
       {overdueTasks.map(task => {
         return (
           <div key={task.id} className="about_task">
