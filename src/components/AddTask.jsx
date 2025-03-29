@@ -17,7 +17,7 @@ const AddTask = ({ hideAddBar }) => {
 
   const onSubmit = async (data) => {
     dispatch(addTask(data));
-    // await delay(1);
+    await delay(1);
     reset();
   }
 
@@ -36,15 +36,15 @@ const AddTask = ({ hideAddBar }) => {
             </div>
             <input placeholder='Enter the title of your task' type="text"
               {...register("title",
-                // {
-                //   required: { value: true, message: "title is required" },
-                //   minLength: { value: 5, message: "minimum length of title is 5" },
-                //   maxLength: { value: 30, message: "maximum length of title is 30" }
-                // }
+                {
+                  required: { value: true, message: "title is required" },
+                  minLength: { value: 5, message: "minimum length of title is 5" },
+                  maxLength: { value: 30, message: "maximum length of title is 30" }
+                }
               )}
             />
           </label>
-          {/* {errors.title && <div className='red' >{errors.title.message}</div>} */}
+          {errors.title && <div className='red' >{errors.title.message}</div>}
         </div>
         <div>
           <label className='common_class_label'>
@@ -52,7 +52,7 @@ const AddTask = ({ hideAddBar }) => {
               <p className='red'>*</p>
             </div>
             <select {...register("priority",
-              // { required: { value: true, message: "priority is required" } }
+              { required: { value: true, message: "priority is required" } }
             )} defaultValue=""
             >
               <option value="" disabled>Select Priority</option>
@@ -60,16 +60,16 @@ const AddTask = ({ hideAddBar }) => {
               <option value="Medium">Medium</option>
               <option value="High">High</option>
             </select>
-            {/* {errors.priority && <div className='red' >{errors.priority.message}</div>} */}
+            {errors.priority && <div className='red' >{errors.priority.message}</div>}
           </label>
           <label className='common_class_label' htmlFor="" >
             <div style={{ display: 'flex' }}>Deadline
               <p className='red'>*</p>
             </div>
             <input placeholder='Enter Date' type="date" {...register("date",
-              // { required: { value: true, message: "deadline is required" } }
+              { required: { value: true, message: "deadline is required" } }
             )} />
-            {/* {errors.date && <div className='red' >{errors.date.message}</div>} */}
+            {errors.date && <div className='red' >{errors.date.message}</div>}
           </label>
         </div>
         <div>
