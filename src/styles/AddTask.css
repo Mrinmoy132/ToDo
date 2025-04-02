@@ -1,0 +1,178 @@
+.addTask {
+    position: fixed;
+    bottom: 5vh;
+    left: 30vw;
+    z-index: 10;
+    margin: 50px;
+    width: 450px;
+    height: 390px;
+    background-color: #b8d0b8;
+    border-radius: 5px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #639159;
+    border-radius: 5px 5px 0px 0px;
+    padding: 5px;
+    color: black;
+}
+
+.top>button {
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    margin-right: 9px;
+    transform: scale(1.5);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.top>button:hover {
+    transform: scale(1.6);
+    color: #d82d2d;
+}
+
+.addTask>form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.addTask>form>div {
+    height: 80px;
+}
+
+.addTask>form .common_class_label {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+
+.addTask>form input,
+select,
+textarea {
+    border: none;
+    padding: 5px;
+    margin: 5px 0px;
+    border-radius: 5px;
+    color: black;
+}
+
+.addTask>form> :nth-child(2) {
+    display: flex;
+    justify-content: flex-start;
+    gap: 150px;
+}
+
+
+.addTask>form> :nth-child(4) {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+}
+
+#submit-btn {
+    cursor: pointer;
+    margin-top: 40px;
+    width: -webkit-fill-available;
+    height: 35px;
+    border-radius: 0px 5px 5px 0px;
+    font-size: 16px;
+    padding: 5px;
+    background-color: #6a9a6a;
+    font-weight: bolder;
+    color: black;
+}
+
+#submit-btn:hover{
+    background-color: #598b59;
+}
+
+#reset-btn {
+    border: none;
+    cursor: pointer;
+    margin-top: 40px;
+    width: -webkit-fill-available;
+    height: 35px;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 16px;
+    padding: 5px;
+    background-color: #6a9a6a;
+    font-weight: bolder;
+    color: black;
+}
+
+#reset-btn:hover{
+    background-color: #598b59;
+}
+
+.adding-task {
+    text-align: center;
+    color: #324e2c;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.red {
+    color: red;
+    font-size: small;
+}
+
+@media screen and (max-width:1300px){
+    .addTask {
+        bottom: 25vh;
+        left: 20vw;
+    }
+}
+
+@media screen and (max-width:700px){
+    .addTask {
+        left: 5vw;
+    }
+}
+
+@media screen and (max-width:550px){
+    .addTask {
+        left: 0;
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .addTask {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        z-index: 10;
+        margin: 0px;
+        width: 280px;
+        height: 390px;
+        border-radius: 5px;
+    }
+
+    .addTask>form .common_class_label {
+        font-size: 14px;
+    }
+
+    .addTask>form {
+        padding: 5px;
+    }
+
+    .addTask>form> :nth-child(2) {
+        gap: 70px;
+    }
+
+    .addTask>form input,
+    select,
+    textarea {
+        font-size: 10px;
+    }
+
+    .red {
+        font-size: x-small;
+    }
+}
