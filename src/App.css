@@ -111,6 +111,7 @@
 .about_task1 {
     position: sticky;
     top: 0;
+    z-index: 5; 
     display: grid;
     grid-template-columns: 4fr 2fr 1fr 2fr;
     padding: 10px 20px;
